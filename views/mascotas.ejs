@@ -1,0 +1,43 @@
+<%- include('template/cabecera.ejs', {tituloweb: 'Mascotas'}); %>
+
+    <header></header>
+
+    <!-- NAV -->
+    <%- include('template/navbar.ejs') %>
+
+    <!-- SECTION -->
+    <h1>Mascotas</h1>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <% if (arrayMascotas.length > 0) { %>
+                <% arrayMascotas.forEach(mascota => { %>
+
+                    <tr>
+                        <th scope="row"><%= mascota.id %></th>
+                        <td><%= mascota.nombre %></td>
+                        <td><%= mascota.descripcion %></td>
+                        <td>
+                            <button type="button" class="btn btn-outline-secondary"><i class="bi bi-pen"> Editar</i></button>
+                            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"> Eliminar</i></button>
+                        </td>
+                    </tr>  
+                    
+                <% }) %>
+            <% } %>
+                          
+        </tbody>
+    </table>    
+
+    <!-- FOOTER -->
+
+<%- include('template/foot') %>
