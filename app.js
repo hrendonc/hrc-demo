@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
 
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(express.json())
+
 require('dotenv').config(); //Modulo para usar las variables de entorno
 
 const port = process.env.PORT; //Coexion a la DB Mongo a travez de la variable de entorno

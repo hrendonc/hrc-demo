@@ -1,0 +1,17 @@
+<%- include('template/cabecera.ejs', {tituloweb: 'Crear'}); %>
+
+    <!-- NAV -->
+    <%- include('template/navbar.ejs') %>
+
+    <h1><%= titulo %></h1>
+
+    <form action="/mascotas" class="my-2" method="POST">
+        <input class="form-control my-2" type="text" name="nombre" id="" placeholder="Ingrese nombre">
+        <input class="form-control my-2" type="text" name="descripcion" id="" placeholder="Ingrese Descripción">
+        <div class="d-grid gap-2">
+            <button class="btn btn-dark" type="submit">Agregar</button>
+        </div>
+    </form>
+
+
+<%- include('template/foot') %>
