@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+
+require('dotenv').config(); //Modulo para usar las variables de entorno
+
+const port = process.env.PORT; //Coexion a la DB Mongo a travez de la variable de entorno
 
 //Conexión a la base de datos
 const mongoose = require('mongoose');
-const user = '';
-const pass = '';
-const dbName = 'veterinaria';
-const uri = `mongodb://localhost:27017/${dbName}`;
+
+const uri = `mongodb://localhost:27017/${process.env.DBNAME}`;
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(()=>console.log('Base de datos Mongo conectada'))
