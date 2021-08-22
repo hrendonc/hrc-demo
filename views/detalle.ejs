@@ -15,23 +15,31 @@
     <% } %>
 
     <% if (!error) { %>
-        <form action="/mascotas" class="my-2" method="POST">
-            <input class="form-control my-2" type="text" name="nombre" id="" value="<%=mascota.nombre%>">
-            <input class="form-control my-2" type="text" name="descripcion" id="" value="<%= mascota.descripcion %>">
+        <form id="formEditar" data-id="<%=mascota.id%>" class="my-2">
+            <input class="form-control my-2" type="text" name="nombre" id="nombreInput" value="<%=mascota.nombre%>">
+            <input class="form-control my-2" type="text" name="descripcion" id="descripcionInput" value="<%= mascota.descripcion %>">
             <div class="d-grid gap-2">
                 <button 
-                    class="btn btn-dark"
-                    type="button"
-                    id="btnEliminar"
-                    data-id="<%=mascota.id%>"
-                    >Eliminar
+                    class="btn btn-secondary"
+                    type="submit"
+                    >Actualizar información
                 </button>
             </div>
         </form>
+        <hr>
+        <div class="d-grid gap-2">
+            <button 
+                class="btn btn-danger"
+                type="button"
+                id="btnEliminar"
+                data-id="<%=mascota.id%>"
+                >Eliminar
+            </button>
+        </div>
     <% } %>
 
 </div>
 <script src="/js/bootstrap.bundle.min.js"></script>
-<script src="/js/funciones.js"> </script>
+<script src="/js/funciones.js"></script>
 </body>
 </html>
